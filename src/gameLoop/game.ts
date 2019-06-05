@@ -19,8 +19,8 @@ export function checkCollision() {
         bullet.y < enemy.y + enemyHeight &&
         bullet.y + bulletHeight > enemy.y
       ) {
-        removeBullet(bullet.id);
-        removeEnemy(enemy.id);
+        removeBullet(bullet.id as number);
+        removeEnemy(enemy.id as number);
         score.update(val => val + 1);
         Math.random() > 0.3
           ? enemyInterval.update(value => (value > 500 ? value - 50 : value))
@@ -45,6 +45,6 @@ function gameOver() {
   const currentScore = get(score);
   if (currentScore > get(maxScore)) {
     maxScore.set(currentScore);
-    localStorage.setItem('maxScore', currentScore);
+    localStorage.setItem('maxScore', currentScore.toString());
   }
 }

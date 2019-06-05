@@ -4,7 +4,7 @@ import { rotateCannon, shoot, moveBullet, clearBullets } from './cannon';
 import { addEnemy, moveEnemy } from './enemy';
 import { checkCollision, enemyAttack } from './game';
 
-function startLoop(steps) {
+function startLoop(steps:Function[]|any[]) {
   window.requestAnimationFrame(() => {
     steps.forEach(step => {
       if (typeof step === 'function') step();

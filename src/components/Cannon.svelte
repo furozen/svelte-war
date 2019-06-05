@@ -1,5 +1,5 @@
 <script>
-  import { angle } from "../stores/cannon.js";
+  import { angle } from "../stores/cannon.ts";
 </script>
 
 <style>

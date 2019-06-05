@@ -25,6 +25,6 @@ export function moveEnemy() {
   );
 }
 
-export function removeEnemy(id) {
+export function removeEnemy(id:number) {
   enemyList.update(enemies => enemies.filter(enemy => enemy.id !== id));
 }

@@ -4,7 +4,7 @@
   import LeftArrow from "../assets/LeftArrow.svelte";
   import RightArrow from "../assets/RightArrow.svelte";
   import Bullet from "../assets/Bullet.svelte";
-  import { direction, isFiring } from "../stores/cannon.js";
+  import { direction, isFiring } from "../stores/cannon.ts";
 
   const resetDirection = () => direction.set(null);
 

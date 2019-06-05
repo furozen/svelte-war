@@ -1,5 +1,6 @@
-import { get } from 'svelte/store';
+import {get} from 'svelte/store';
 import { angle, direction, isFiring, lastFireAt, bulletList } from '../stores/cannon.js';
+
 
 export function rotateCannon() {
   const currentAngle = get(angle);
@@ -18,7 +19,7 @@ export function rotateCannon() {
 export function shoot() {
   if (get(isFiring) && Date.now() - get(lastFireAt) > 800) {
     lastFireAt.set(Date.now());
-    bulletList.update(bullets => [
+    (bulletList).update(bullets => [
       ...bullets,
       {
         x: 238,
@@ -31,7 +32,9 @@ export function shoot() {
 }
 
 export function moveBullet() {
+
   bulletList.update(bullets =>
+  // @ts-ignore  // any type
     bullets.map(bullet => ({
       ...bullet,
       y: bullet.y - 20,
@@ -44,6 +47,6 @@ export function clearBullets() {
   bulletList.update(bullets => bullets.filter(bullet => bullet.y > 0));
 }
 
-export function removeBullet(id) {
+export function removeBullet(id:number) {
   bulletList.update(bullets => bullets.filter(bullet => bullet.id !== id));
 }
