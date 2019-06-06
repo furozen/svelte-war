@@ -1,4 +1,5 @@
 # Svelte-war - game build with Svelte 3 for habr tutorial.
+Typescript version
 
 Try [demo](https://az67128.github.io/svelte-war)
 
